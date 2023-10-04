@@ -1,0 +1,18 @@
+# Comentarios comienzan con #
+# Ignorar todos los archivos .log
+# *.log
+
+# Ignorar el directorio "temp" y sus contenidos
+# /temp/
+
+# Ignorar un archivo específico
+# config.txt
+
+# Ignorar todos los archivos en un directorio específico
+# /assets/*
+
+# Ignorar todos los archivos .jpg en cualquier parte del proyecto
+# **/*.jpg
+
+# Ignora el contenido del directorio Instructor
+/Instructor/
