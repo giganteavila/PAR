@@ -1,0 +1,322 @@
+::Pregunta 1:: ¿Cómo aseguran los hosts que los paquetes se dirijan al destino de red correcto?
+{
+   =Buscan una ruta hacia la dirección de destino de red en su propia tabla de enrutamiento local y transmiten esta información al gateway predeterminado.
+   ~%-25% Envían un paquete de consulta al gateway predeterminado en el que preguntan por la ruta más adecuada.
+   ~%-25% Deben mantener su propia tabla de enrutamiento local que contenga una ruta a la interfaz loopback, una ruta de red local y una ruta predeterminada remota.
+   ~%-25% Siempre dirigen los paquetes al gateway predeterminado, que es responsable de la entrega de los paquetes.
+}
+
+::Pregunta 2:: ¿Cuál de estos parámetros utiliza el router para elegir la ruta hacia el destino cuando existen varias rutas disponibles?
+{
+   ~%-25% La dirección IP de gateway más alta para llegar a la red de destino.
+   ~%-25% El valor de métrica más alto que se asocia a la red de destino.
+   ~%-25% La dirección IP de gateway más baja para llegar a la red de destino.
+   =El valor de métrica más bajo que se asocia a la red de destino.
+}
+
+::Pregunta 3:: Dentro de una red de producción, ¿cuál es el propósito de configurar un switch con una dirección de gateway predeterminado?
+{
+   =Un switch debe tener un gateway predeterminado para que se pueda acceder a este por Telnet y SSH.
+   ~%-25% Los hosts que están conectados al switch pueden utilizar la dirección de gateway predeterminado del switch para reenviar paquetes a un destino remoto.
+   ~%-25% Proporciona una dirección de siguiente salto para todo el tráfico que fluye a través del switch.
+   ~%-25% La dirección de gateway predeterminado se utiliza para reenviar los paquetes originados en el switch a las redes.
+}
+
+::Pregunta 4:: ¿Por qué no se necesita NAT en IPv6?
+{
+   ~%-25% Dado que IPv6 cuenta con seguridad integrada, no hay necesidad de ocultar las direcciones IPv6 de las redes internas.
+   ~%-25% Se solucionan los problemas de conectividad de extremo a extremo causados por NAT debido a que el número de rutas aumenta con la cantidad de nodos conectados a Internet.
+   ~%-25% Se solucionan los problemas producidos por aplicaciones NAT debido a que el encabezado de IPv6 mejora el manejo de los paquetes por parte de los routers intermediarios.
+   =Cualquier host o usuario puede obtener una dirección de red IPv6 pública porque la cantidad de direcciones IPv6 disponibles es extremadamente grande.
+}
+
+::Pregunta 5:: Una PC puede tener acceso a los dispositivos en la misma red, pero no puede tener acceso a los dispositivos en otras redes. ¿Cuál es la causa probable de este problema?
+{
+   ~%-25% El cable no está conectado correctamente a la NIC.
+   ~%-25% La PC tiene una máscara de subred incorrecta.
+   =La dirección de gateway predeterminado de la PC no es válida.
+   ~%-25% La dirección IP de la PC no es válida.
+}
+
+::Pregunta 6:: ¿Qué entrada de la tabla de routing tiene una dirección de siguiente salto asociada con una red de destino?
+{
+   ~%-25% Rutas de origen C y L.
+   ~%-25% Rutas conectadas directamente.
+   ~%-25% Rutas locales.
+   =Rutas remotas.
+}
+
+::Pregunta 7:: ¿Cuál es el campo del encabezado de IPv4 que se utiliza para evitar que un paquete atraviese una red incesantemente?
+{
+   ~%-25% Número de acuse de recibo.
+   ~%-25% Número de secuencia.
+   ~%-25% Servicios diferenciados.
+   =Tiempo de duración.
+}
+
+::Pregunta 8:: ¿Cuál de estas afirmaciones describe una característica del Protocolo IP?
+{
+   ~%-25% La encapsulación IP se modifica en función de los medios de red.
+   ~%-25% IP utiliza protocolos de capa 2 para el control de errores de transmisión.
+   ~%-25% Las direcciones MAC se utilizan durante la encapsulación de paquetes IP.
+   =IP utiliza los servicios de capa superior para manejar situaciones de paquetes faltantes o fuera de orden.
+}
+
+::Pregunta 9:: ¿Cuál es una de las ventajas que ofrece el encabezado de IPv6 simplificado sobre el IPv4?
+{
+   ~%-25% Encabezado de menor tamaño.
+   ~%-25% Direcciones IP de origen y destino de menor tamaño.
+   =Pocos requisitos de procesamiento de checksums.
+   ~%-25% Manejo eficaz de paquetes.
+}
+
+::Pregunta 10:: ¿Qué hará el switch con la trama cuando la PC1 envía una trama dirigida a la PC3 y la dirección MAC de destino no está en su tabla de direcciones?
+{
+   ~%-25% El switch reenviará la trama solamente a los puertos 1 y 3.
+   ~%-25% El switch descartará la trama.
+   =El switch reenviará la trama a todos los puertos.
+   ~%-25% El switch reenviará la trama solamente al puerto 2.
+}
+
+::Pregunta 11:: ¿Qué dirección MAC recibe la PC1 en la respuesta de ARP cuando intenta conectarse a Servidor_de_archivos1?
+{
+   =La dirección MAC de la interfaz G0/0 del R1.
+   ~%-25% La dirección MAC de la interfaz G0/0 del R2.
+   ~%-25% La dirección MAC del S1.
+   ~%-25% La dirección MAC del S2.
+}
+
+::Pregunta 12:: ¿Cuál de las siguientes afirmaciones describe el tratamiento de las solicitudes de ARP en el enlace local?
+{
+   ~%-25% Las descartan todos los switches de la red local.
+   ~%-25% Deben reenviarlas todos los routers de la red local.
+   =Las reciben y las procesan todos los dispositivos de la red local.
+   ~%-25% Las recibe y las procesa solamente el dispositivo objetivo.
+}
+
+::Pregunta 13:: ¿Cuál es el objetivo de un ataque de suplantación de ARP?
+{
+   ~%-25% Abrumar a los hosts de la red con solicitudes ARP.
+   =Asociar direcciones IP con direcciones MAC incorrectas.
+   ~%-25% Inundar la red con transmisiones de respuesta de ARP.
+   ~%-25% Llenar las tablas de direcciones MAC del switch con direcciones falsas.
+}
+
+::Pregunta 14:: ¿Qué dirección de destino se utiliza en un marco de solicitud ARP?
+{
+   ~%-25% AAAA.AAAA.AAAA.
+   =FFFF.FFFF.FFFF.
+   ~%-25% La dirección física del host de destino.
+   ~%-25% 0.0.0.0.
+}
+
+::Pregunta 15:: ¿Cuál es el resultado de emitir el comando **arp -d *** en un PC?
+{
+   ~%-25% Se muestra la información detallada de la caché ARP.
+   =Se borra la caché ARP.
+   ~%-25% Se muestra el contenido actual de la caché ARP.
+   ~%-25% Se sincroniza la caché ARP con la interfaz del router.
+}
+
+::Pregunta 16:: ¿Cuáles son las dos circunstancias en las que un switch satura una trama por todos los puertos, excepto aquel por el que la recibió? (Seleccione dos opciones)
+{
+   ~%-25% La dirección de origen en la trama es una dirección de multidifusión.
+   =La trama tiene la dirección de difusión como dirección de destino.
+   ~%-25% La dirección de origen en el encabezado de la trama es la dirección de difusión.
+   ~%-25% La dirección de destino en la trama es una dirección de unidifusión conocida.
+   =El switch no conoce la dirección de destino.
+}
+
+::Pregunta 17:: ¿Cuál es el efecto del comando de configuración global **ip default-gateway 172.16.100.1** aplicado a un switch?
+{
+   ~%-25% El switch puede comunicarse con otros hosts de la red 172.16.100.0.
+   ~%-25% El switch tendrá una interfaz de administración con la dirección 172.16.100.1.
+   =El switch se puede administrar de forma remota desde un host en otra red.
+   ~%-25% El switch está limitado a enviar y recibir tramas desde y hacia la puerta de enlace 172.16.100.1.
+}
+
+::Pregunta 18:: ¿Cuál es la forma más rápida de probar si un banner está configurado correctamente en un dispositivo Cisco?
+{
+   ~%-25% Reiniciar el dispositivo.
+   ~%-25% Apagar y encender el dispositivo.
+   =Salir del modo EXEC privilegiado y pulsar **Enter**.
+   ~%-25% Escribir **CTRL-Z** en la solicitud de modo privilegiado.
+}
+
+::Pregunta 19:: ¿Cuál de las siguientes afirmaciones describe una dirección de gateway predeterminado?
+{
+   =Es la dirección IP de la interfaz del Router1 que conecta la LAN de la PC1 al router1.
+   ~%-25% Es la dirección IP de la interfaz del Router1 que conecta la compañía a Internet.
+   ~%-25% Es la dirección IP del Switch1 que conecta la PC1 con otros dispositivos en la misma LAN.
+   ~%-25% Es la dirección IP del dispositivo de red ISP ubicado en la nube.
+}
+
+::Pregunta 20:: ¿Cuál dirección IP debería ser configurada como la puerta de enlace predeterminada para un nuevo host en la LAN Payroll?
+{
+   ~%-25% 10.27.15.17.
+   =10.27.14.148.
+   ~%-25% 203.0.113.39.
+   ~%-25% 10.14.15.254.
+}
+
+::Pregunta 21:: ¿Cuáles son los tres comandos que se utilizan para configurar el acceso seguro a un router mediante una conexión a la interfaz de consola? (Seleccione tres opciones)
+{
+   ~%-25% interface fastethernet 0/0.
+   =enable secret cisco.
+   =login.
+   ~%-25% line vty 0 4.
+   =password cisco.
+   ~%-25% line console 0.
+}
+
+::Pregunta 22:: Un router arranca e ingresa al modo de configuración. ¿Por qué razón?
+{
+   ~%-25% Cisco IOS no está en la memoria flash.
+   ~%-25% El proceso POST ha detectado un error de hardware.
+   ~%-25% La imagen del IOS está dañada.
+   =Falta el archivo de configuración en NVRAM.
+}
+
+::Pregunta 23:: ¿Cuáles de los siguientes son dos problemas de red potenciales que pueden surgir del funcionamiento del protocolo ARP? (Seleccione dos opciones)
+{
+   =La configuración manual de asociaciones ARP estáticas puede facilitar el envenenamiento ARP o la suplantación de direcciones MAC.
+   =En redes grandes que tienen un ancho de banda bajo, varios broadcasts de ARP pueden causar retrasos en la comunicación de datos.
+   ~%-25% Una gran cantidad de transmisiones de solicitud de ARP pueden provocar que la tabla de direcciones MAC del host se desborde.
+   ~%-25% Los atacantes de la red podrían manipular las asignaciones de direcciones MAC e IP en mensajes ARP.
+}
+
+::Pregunta 24:: ¿Cuál es el efecto de usar el comando **Router\# copy running-config startup-config** en un router?
+{
+   ~%-25% El contenido de flash cambiará.
+   ~%-25% El contenido de ROM cambiará.
+   ~%-25% El contenido de la RAM cambiará.
+   =El contenido de NVRAM cambiará.
+}
+
+::Pregunta 25:: ¿Qué sucede si se configura de forma incorrecta la dirección de gateway predeterminado en un host?
+{
+   ~%-25% El switch no reenvía paquetes iniciados por el host.
+   ~%-25% El host no puede comunicarse con otros hosts en la red local.
+   =El host no puede comunicarse con hosts en otras redes.
+   ~%-25% El host debe utilizar el protocolo ARP para determinar la dirección de gateway predeterminado correcta.
+}
+
+::Pregunta 26:: ¿Qué término describe un campo en el encabezado de un paquete IPv4 que contiene un valor binario de 32 bits asociado a una interfaz en el dispositivo de envío?
+{
+   ~%-25% TTL.
+   =Dirección IPv4 de origen.
+   ~%-25% Protocolo.
+   ~%-25% Dirección IPv4 de destino.
+}
+
+::Pregunta 27:: ¿Qué propiedad de ARP permite a los hosts de una LAN enviar tráfico a redes remotas?
+{
+   ~%-25% La dirección MAC de origen aparece en el encabezado de la trama Ethernet.
+   ~%-25% Las respuestas ARP se transmiten en la red cuando un host recibe una solicitud ARP.
+   ~%-25% La dirección MAC de destino FF-FF-FF-FF-FF-FF aparece en el encabezado de la trama Ethernet.
+   =Los host locales aprenden la dirección MAC de la puerta de enlace predeterminada.
+}
+
+::Pregunta 28:: ¿Cuál de las siguientes afirmaciones es correcta sobre la dirección de gateway predeterminado?
+{
+   =Es la dirección IP de la interfaz del router que conecta la LAN del host al router.
+   ~%-25% Es la dirección IP de la interfaz del switch al que está conectado el host.
+   ~%-25% Es la dirección IP del ISP en la nube.
+   ~%-25% Es la dirección IP del servidor DNS configurado en la red.
+}
+
+::Pregunta 29:: Un administrador de red necesita asegurarse de que los paquetes de su red se enrutan correctamente. ¿Qué debería verificar primero?
+{
+   =La tabla de enrutamiento del router.
+   ~%-25% La caché de direcciones MAC del switch.
+   ~%-25% La configuración de firewall en el router.
+   ~%-25% La tabla ARP del servidor DHCP.
+}
+
+::Pregunta 30:: ¿Cuál es el comando correcto para configurar una dirección IP en la interfaz de un router Cisco?
+{
+   =ip address 192.168.1.1 255.255.255.0.
+   ~%-25% ip default-gateway 192.168.1.1.
+   ~%-25% interface vlan 1.
+   ~%-25% ip nat inside.
+}
+
+::Pregunta 31:: ¿Cuál es la dirección IP que debe configurarse como puerta de enlace predeterminada para un nuevo host en la LAN Payroll?
+{
+   ~%-25% 10.27.15.17.
+   ~%-25% 203.0.113.39.
+   =10.27.14.148.
+   ~%-25% 10.14.15.254.
+}
+
+::Pregunta 32:: ¿Cuál es el propósito de la dirección de gateway predeterminado en un host?
+{
+   =Permitir que los paquetes sean enviados a redes externas cuando no se encuentra una ruta en la tabla de enrutamiento local.
+   ~%-25% Facilitar la resolución de nombres de dominio.
+   ~%-25% Almacenar información de direcciones MAC de dispositivos remotos.
+   ~%-25% Actuar como un firewall para filtrar tráfico no autorizado.
+}
+
+::Pregunta 33:: ¿Cuál es el comando utilizado en un switch Cisco para mostrar su tabla de direcciones MAC?
+{
+   =show mac address-table.
+   ~%-25% show arp.
+   ~%-25% show interfaces.
+   ~%-25% show running-config.
+}
+
+::Pregunta 34:: ¿Qué método utiliza un switch para aprender direcciones MAC?
+{
+   =Analiza las direcciones de origen de los tramas entrantes y las almacena en su tabla de direcciones MAC.
+   ~%-25% Envía solicitudes ARP para obtener las direcciones MAC de los dispositivos conectados.
+   ~%-25% Escanea activamente la red en busca de dispositivos conectados.
+   ~%-25% Consulta la base de datos del router para obtener la información de direcciones MAC.
+}
+
+::Pregunta 35:: ¿Cuál es el efecto del comando **no shutdown** en una interfaz de un router Cisco?
+{
+   =Activa la interfaz y la habilita para el tráfico de red.
+   ~%-25% Desactiva la interfaz para el tráfico de red.
+   ~%-25% Reinicia la interfaz y borra su configuración.
+   ~%-25% Borra la configuración IP de la interfaz.
+}
+
+::Pregunta 36:: ¿Qué tipo de dirección es FF-FF-FF-FF-FF-FF en una red Ethernet?
+{
+   =Una dirección de difusión (broadcast).
+   ~%-25% Una dirección de unidifusión.
+   ~%-25% Una dirección de multidifusión.
+   ~%-25% Una dirección de gateway predeterminada.
+}
+
+::Pregunta 37:: ¿Qué comando se usa en un switch Cisco para ingresar al modo de configuración global?
+{
+   =configure terminal.
+   ~%-25% enable.
+   ~%-25% setup.
+   ~%-25% interface vlan 1.
+}
+
+::Pregunta 38:: ¿Qué sucede cuando un switch recibe una trama con una dirección MAC de destino que no se encuentra en su tabla de direcciones MAC?
+{
+   =Envía la trama a todos los puertos excepto el puerto de origen (flooding).
+   ~%-25% Descarta la trama.
+   ~%-25% La reenvía solamente al gateway predeterminado.
+   ~%-25% Espera a recibir una respuesta ARP antes de reenviar la trama.
+}
+
+::Pregunta 39:: ¿Cuál de los siguientes es un protocolo de capa 3 utilizado para determinar la dirección MAC de un dispositivo a partir de su dirección IP?
+{
+   =ARP (Address Resolution Protocol).
+   ~%-25% DNS (Domain Name System).
+   ~%-25% ICMP (Internet Control Message Protocol).
+   ~%-25% DHCP (Dynamic Host Configuration Protocol).
+}
+
+::Pregunta 40:: ¿Qué comando se utiliza en un switch Cisco para asignar una dirección IP a la interfaz VLAN 1?
+{
+   =interface vlan 1.
+   ~%-25% ip address vlan 1.
+   ~%-25% configure vlan 1.
+   ~%-25% assign ip vlan 1.
+}
